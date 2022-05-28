@@ -1,0 +1,66 @@
+# .rubocop.yml
+# https://hoshinotsuyoshi.com/post/rubocop_yaml/
+inherit_from: .rubocop_todo.yml
+
+inherit_mode:
+  merge:
+    - Exclude
+
+require:
+  - rubocop-performance
+  - rubocop-rubycw
+
+AllCops:
+  DisabledByDefault: true
+  Exclude:
+    - "vendor/**/*"
+    - "bin/**"
+    - "db/schema.rb"
+    - "node_modules/**/*"
+    - "tmp/**/*"
+    - "lib/**/*"
+    - "config/initializers/secure_headers.rb"
+  DisplayCopNames: true
+  NewCops: disable
+  SuggestExtensions: false
+
+Bundler:
+  Enabled: true
+
+Gemspec:
+  Enabled: true
+
+Lint:
+  Enabled: true
+
+Performance:
+  Enabled: true
+
+# ruby -cw 相当のことをrubocopでチェックできる。
+Rubycw:
+  Enabled: true
+
+Security:
+  Enabled: true
+
+# Style/*とMetrics/*は敢えて切っている
+
+##################### Metrics ##################################
+
+# # 1行の文字数
+# Layout/LineLength:
+#   Max: 200
+#   Exclude:
+#     - "db/migrate/*.rb"
+
+# # メソッドの行数
+# Metrics/MethodLength:
+#   Max: 200
+#   Exclude:
+#     - "db/migrate/*.rb"
+
+# # クラスの行数
+# Metrics/ClassLength:
+#   Max: 300
+#   Exclude:
+#     - "db/migrate/*.rb"

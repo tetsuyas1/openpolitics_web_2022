@@ -1,0 +1,11 @@
+Dockerfile
+.dockerignore
+.gitlog
+.git
+
+log/*
+tmp/*
+
+*.bundle
+vendor/bundle
+node_modules
